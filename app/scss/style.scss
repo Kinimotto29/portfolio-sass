@@ -1,0 +1,363 @@
+@import "zmienne";
+@import "mixins";
+
+/* General */
+
+body {
+    font-family: 'Roboto Slab', serif;
+}
+
+.menu-grey {
+    &:hover {
+        color: $light-grey!important;
+    }
+}
+
+section {
+    padding: 60px 0;
+
+    h3 {
+        @include section-h3;
+    }
+
+    p {
+        @include paragraph;
+    }
+}
+
+h4 {
+    @include section-h4;
+}
+
+.section-header {
+    margin-bottom: 70px;
+
+    h2 {
+        @include section-h2;
+    }
+
+    p {
+        @include paragraph;
+    }
+}
+
+/* General END */
+
+/* Main nav */
+
+.navbar.navbar-light {
+    background-color: transparent;
+    transition: all .1s ease-out;
+
+
+    .navbar-toggler {
+        border-color: transparent;
+        transition: all 0.2s;
+
+        &:active,
+        &:focus,
+        &:hover {
+            outline: 0;
+            cursor: pointer;
+            border-color: #fff;
+        }
+    }
+
+    .navbar-brand {
+        color: #fff;
+        font-family: 'Droid Serif', sans-serif;
+        transition: all .2s ease;
+
+        &:hover {
+            color: $light-blue;
+        }
+        &:focus {
+            color: #fff;;
+        }
+    }
+
+    .nav-link {
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        transition: all .2s ease;
+
+        &:hover {
+            color: $light-blue;
+            outline: 0;
+            cursor: pointer;
+            border-color: #fff;
+        }
+        &:focus {
+            color: #fff;
+        }
+    }
+}
+
+/* Main nav END */
+
+/* Main header */
+
+.main-header {
+    height: 100vh;
+    color: #fff;
+    background-image: linear-gradient(to bottom, $dark-transparent, $dark-transparent), url(../img/header/pictures_on_the_wall.jpg);
+
+    @include background-fluid;
+    @include flex-center;
+
+    h1 {
+        @include main-header-h1;
+    }
+
+    h2 {
+        @include main-header-h2;
+    }
+
+    a {
+        @include main-header-btn;
+    }
+}
+
+/* Main header END */
+
+/* Services */
+
+#services {
+
+    .fa {
+        border: 2px solid $light-blue;
+        border-radius: 50%;
+        background-color: $light-blue;
+        color: #fff;
+        padding: 15px;
+        font-size: 2.8em;
+        transition: all 0.4s;
+        cursor: pointer;
+        overflow: hidden;
+
+        &:hover {
+            background-color: #fff;
+            color: $light-blue;
+            transform: rotate(360deg);
+        }
+
+    }
+
+}
+
+/* Services END */
+
+/* Portfolio */
+
+#portfolio {
+    background-color: $beige;
+
+    .container {
+        margin-bottom: 70px;
+
+        .section-header {
+            margin-top: 70px;
+        }
+
+        .portfolio-content {
+            background-color: #fff;
+            overflow: hidden;
+
+            .portfolio-image {
+                overflow: hidden;
+                height: 250px;
+
+                .portfolio-image-background {
+                    height: 100%;
+                    transition: all 0.3s;
+
+                    @include background-fluid;
+
+                    &:hover {
+                        transform: scale(1.5);
+                    }
+
+                    .portfolio-mask {
+                        background-color: $light-blue-transparent;
+                        color: #fff;
+                        opacity: 0;
+                        height: 100%;
+                        overflow: hidden;
+                        transition: all 0.3s;
+
+                        @include flex-center;
+
+                        &:hover {
+                            opacity: 1;
+                            cursor: pointer;
+                        }
+                        
+                        i {
+                            font-size: 2em;
+                        }
+                    }
+
+                }
+
+                #pic-1 {
+                    background-image: url(../img/portfolio/box_of_cookies.jpg);
+                }
+
+                #pic-2 {
+                    background-image: url(../img/portfolio/chaotic_paint.jpg);
+                }
+
+                #pic-3 {
+                    background-image: url(../img/portfolio/chestnut_on_bracket.jpg)
+                }
+
+                #pic-4 {
+                    background-image: url(../img/portfolio/child_with_blue_paint.jpg);
+                }
+
+                #pic-5 {
+                    background-image: url(../img/portfolio/house_with_blue_doors.jpg);
+                }
+
+                #pic-6 {
+                    background-image: url(../img/portfolio/typing_on_laptop.jpg);
+                }
+            }
+        }
+    }
+}
+
+/* Portfolio END */
+
+/* Team */
+
+#team {
+
+    .section-header {
+        margin-top: 50px;
+    }
+
+    .team-content {
+
+        img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+        }
+        
+        i {
+            @include social-icon;
+        }
+    }
+
+    .section-footer {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+}
+
+/* Team END*/
+
+/* Contact */
+
+#contact {
+    background-image: linear-gradient(to bottom, $dark-transparent, $dark-transparent), url(../img/footer/world-map.jpg);
+
+    @include background-fluid;
+
+    .container {
+
+        .section-header {
+            margin-top: 50px;
+
+            h2, p {
+                color: #fff;
+            }
+        }
+
+        form {
+
+            .inputs {
+                
+                textarea {
+                        height: 100%;
+
+                        @include form-inputs;
+                    }
+
+                .flex {
+                    height: 200px;
+
+                    @include flex-column;
+
+                    input {
+                        @include form-inputs;
+                    }
+                }
+            }
+
+            .submit {
+                margin-top: 30px;
+                margin-bottom: 50px;
+                
+                @include flex-center;
+
+                .btn {
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 700;
+                    background-color: $light-blue;
+                    border-color: $light-blue;
+                    padding: 10px;
+                    margin-top: 20px;
+                    transition: all 0.2s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #fff;
+                        border-color: #fff;
+                        color: $light-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Contact END */
+
+/* Footer */
+
+#main-footer {
+    height: 80px;
+    
+    .row {
+        margin-top: 20px;
+        
+        @include flex-center;
+        
+        i {
+            @include social-icon;
+        }
+        
+        li {
+            display: inline-block;
+            margin-right: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1em;
+            font-weight: 700;
+            
+            a {
+                color: $dark-grey;
+                transition: all .2s ease;
+                
+                &:hover {
+                    text-decoration: none;
+                    color: $light-blue;
+                }
+            }
+        }
+    }
+}
+
+/* Footer END */

@@ -1,0 +1,120 @@
+@import "zmienne";
+
+@mixin social-icon {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    background-color: $darker;
+    color: #fff;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 1.5em;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: $light-blue;
+        cursor: pointer;
+    }
+}
+
+@mixin section-h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $darker;
+    margin-bottom: 25px;
+}
+
+@mixin section-h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: $dark-grey;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+@mixin section-h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: $dark-grey;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+@mixin paragraph {
+    font-family: 'Droid Serif', sans-serif;
+}
+
+@mixin main-header-h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4em;
+    font-weight: 700;
+}
+
+@mixin main-header-h2 {
+    font-family: 'Droid Serif', sans-serif;
+    font-size: 2em;
+}
+
+@mixin main-header-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    background-color: $light-blue;
+    border-color: $light-blue;
+    padding: 10px;
+    margin-top: 20px;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: #fff;
+        color: $light-blue;
+        border-color: #fff;
+    }
+    &:focus {
+        box-shadow: 0 0 0 0.2rem transparent;
+        outline: 0;
+    }
+    &:active {
+        background-color: #fff!important;
+        color: &light-blue!important;
+        border-color: #fff!important;
+        box-shadow: 0 0 0 0.2rem transparent!important;
+        cursor: pointer!important;
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin background-fluid {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin form-inputs {
+    width: 100%;
+    border: 10px solid #fff;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    &:focus {
+        border: 10px solid $lighter-blue;
+        background-color: $lighter-blue;
+        outline: 0;
+    }
+    
+    &::placeholder {
+        color: $light-grey;
+    }
+}
